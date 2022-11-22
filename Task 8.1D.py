@@ -19,13 +19,12 @@ Stop = 0x00
 # Reset data register value
 Reset = 0x07
 
-Sensor = 0x23
 # To initiate the smbus library bus is used as a variable
 bus = smbus.SMBus(1)
 
 # Method to read the sensor's value
 def light():
-	address = bus.read_i2c_block_data(Address, Sensor)
+	address = bus.read_i2c_block_data(address, Address)
 	result = light_Convert(address)
 	return result
 	
